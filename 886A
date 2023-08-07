@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main(void) {
+  int p;
+  scanf("%d", &p);
+  char prr[p];
+  for(int n = 0; n<p; n++){
+    int arr[4];
+    int c = 0;
+    do{   
+      scanf("%d", &arr[c]);
+      c++;
+    }
+    while(getchar() != '\n');
+  
+    int i = 0;
+    while(i<3){
+      if(arr[i] < arr[i+1]){
+        int tr = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = tr;
+        i = 0;
+      }
+      else{
+        i++;
+      }
+    }
+    
+     if((arr[1] + arr[0])>=10){
+       printf("Yes\n");
+     }
+     else{
+       printf("No\n");
+     }
+  }
+}
